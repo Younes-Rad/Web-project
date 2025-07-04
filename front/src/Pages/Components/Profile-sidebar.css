@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'IRANSansWeb'; 
+    src: url('/Fonts/IRANSansWeb.woff2') format('woff2'); 
+}
+  
+@font-face {
+      font-family: 'IRANYekan';
+      src: url('/Fonts/IRANYekan.ttf') format('truetype');
+  
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "IRANSansWeb", "IRANYekan";
+}
+
+:root {
+    --font-family: "IRANSansWeb", "IRANYekan";
+}
+
+
+.ProfileSidebar-container{
+    width: 24.5rem;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid #EDEDED;
+
+    color: #434343;
+
+    font-family: IRANYekanXVF;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.ProfileSidebar-lines{
+    height: 1px;
+    background: #EDEDED;
+}
+
+.ProfileSidebar-person{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ProfileSidebar-person-image{
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+
+.ProfileSidebar-person-image-btn{
+
+    position: relative;
+    top: 50px;
+    right: -35px;
+    background-color: #B95962;
+    border-radius: 9rem;
+}
+
+.ProfileSidebar-person-image img{
+    position: relative;
+}
+
+.ProfileSidebar-person-image button{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0px solid black;
+    border-radius: 9rem;
+    display: flex;
+    align-items: center;
+    padding-right: 6px;
+}
+
+.ppn-text{
+    color: #434343;
+
+    font-family: var(--font-family);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.ProfileSidebar-person-name{
+    text-align: center;
+}
+
+.ProfileSidebar-person-email{
+    text-align: center;
+    color: #656565;
+
+    font-family: var(--font-family);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.ProfileSidebar-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 0.75rem;
+}
+
+.ProfileSidebar-info-buy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ProfileSidebar-info-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+
+.ProfileSidebar-buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+
+.PBI{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    padding: 0.75rem 0rem;
+    align-items: center;
+}
+
+.PBI button{
+    color: #434343;
+    font-family: var(--font-family);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+
+.PBI-active button{
+    color: #B95962;
+}
+
+.PBI-active{
+    border-bottom: 2px solid #B95962;
+}
+
+

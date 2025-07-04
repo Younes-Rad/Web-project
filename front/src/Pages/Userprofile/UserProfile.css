@@ -1,0 +1,126 @@
+:root {
+  --white: #ffffff;
+  --redp: #a72f3b;
+  --neutral-gray-3: #ededed;
+  --neutral-gray-9: #434343;
+  --neutral-gray-10: #242424;
+  --black: #000000;
+  --font-main: "IranYekanXvf-Regular", sans-serif;
+  --font-bold: "IranYekanXvf-Bold", sans-serif;
+  --font-medium: "IranYekanXvf-Medium", sans-serif;
+}
+body { margin: 0; background-color: var(--white); font-family: var(--font-main); color: var(--neutral-gray-9); }
+*, *::before, *::after { box-sizing: border-box; }
+a { text-decoration: none; color: inherit; }
+button { background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; }
+img { max-width: 100%; display: block; }
+h2, h3, p { margin: 0; }
+
+.UP-container{
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2rem;
+}
+
+.UP-container div{
+  direction: rtl; 
+}
+
+.UPS-profile-dashboard {
+  direction: rtl;
+  width: 65%;
+  margin: 0 auto;
+  border: 1px solid var(--neutral-gray-3);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.UPS-stats-overview { display: flex; flex-direction: column; gap: 1rem; }
+.UPS-stats-title { margin: 0; font-family: var(--font-bold); font-size: 24px; line-height: 120%; color: var(--neutral-gray-10); }
+.UPS-stats-row { display: flex; justify-content: space-evenly; align-items: center; }
+.UPS-stat-item { display: flex; align-items: center; gap: 8px; }
+.UPS-stat-text { display: flex; flex-direction: column; align-items: flex-start; }
+.UPS-stat-icon { width: 24px; height: 24px; }
+.UPS-stat-label { font-size: 18px; line-height: 180%; font-weight: 400; color: var(--neutral-gray-9); }
+.UPS-stat-count { font-size: 14px; line-height: 180%; font-weight: 400; color: var(--neutral-gray-9); }
+.UPS-stats-divider { border: none; border-top: 1px solid var(--neutral-gray-3); width: 100%; }
+
+.UPS-product-section { display: flex; flex-direction: column; gap: 1rem; }
+.UPS-section-header { display: flex; justify-content: space-between; align-items: center; }
+.UPS-section-title { font-family: var(--font-bold); font-size: 24px; line-height: 140%; color: var(--neutral-gray-10); }
+.UPS-section-view-all { font-family: var(--font-medium); font-size: 14px; line-height: 24px; color: var(--redp); }
+
+.UPS-product-carousel { position: relative; }
+.UPS-product-scroller { display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: none; }
+.UPS-product-scroller::-webkit-scrollbar { display: none; }
+.UPS-carousel-arrow {
+  position: absolute; top: 40%; transform: translateY(-50%); width: 40px; height: 40px;
+  border-radius: 50%;  display: flex;
+  align-items: center; justify-content: center; z-index: 10;
+}
+.UPS-carousel-arrow--prev { left: -20px; }
+.UPS-carousel-arrow--next { right: -20px; }
+.UPS-carousel-arrow--next img { transform: scaleX(-1); }
+
+.UPS-product-card {
+  border: 1px solid var(--neutral-gray-3);
+  border-radius: 16px;
+  display: flex; flex-direction: column;
+  flex: 0 0 288px; height: 382px;
+  padding: 16px; gap: 16px;
+}
+.UPS-product-image-container {
+  height: 230px; border-radius: 8px;
+  overflow: hidden; position: relative;
+}
+.UPS-product-image { width: 100%; height: 100%; object-fit: cover; }
+.UPS-product-colors { position: absolute; bottom: 8px; left: 8px; display: flex; }
+.UPS-color-dot { width: 16px; height: 16px; border-radius: 50%; margin-right: -4px; }
+.UPS-product-info { display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+.UPS-product-title-row { display: flex; justify-content: space-between; align-items: center; }
+.UPS-product-name {
+  font-family: var(--font-bold); font-size: 18px;
+  line-height: 140%; color: var(--black);
+}
+.UPS-like-button { width: 24px; height: 24px; }
+.UPS-product-subtitle {
+  font-size: 14px; line-height: 180%;
+  font-weight: 400; color: var(--black);
+}
+.UPS-product-price-row {
+  display: flex; gap: 9px;
+  margin-top: auto; align-self: flex-start;
+}
+.UPS-product-price {
+  font-family: var(--font-bold); font-size: 20px;
+  line-height: 140%; color: var(--black);
+}
+.UPS-product-currency {
+  font-family: var(--font-bold); font-size: 18px;
+  line-height: 140%; color: var(--black);
+}
+
+.UPS-product-card--gallery { height: auto; padding: 0; }
+.UPS-product-card--gallery .UPS-product-image-container { border-radius: 16px 16px 0 0; height: 200px; }
+.UPS-product-card--gallery .UPS-product-info { padding: 16px; }
+.UPS-product-card--gallery .UPS-product-subtitle { height: auto; }
+.UPS-btn-outline {
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; margin: 0 16px 16px;
+  padding: 8px 24px; border: 1px solid var(--redp);
+  color: var(--redp); border-radius: 8px; font-size: 14px;
+  font-family: var(--font-medium);
+}
+.UPS-btn-outline:hover { background-color: rgba(167, 47, 59, 0.05); }
+
+@media (max-width: 900px) {
+  .UPS-profile-dashboard { margin: 1rem; }
+  .UPS-carousel-arrow { display: none; }
+}
+@media (max-width: 600px) {
+  .UPS-stats-row { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .UPS-stats-divider { display: none; }
+}

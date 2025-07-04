@@ -1,0 +1,214 @@
+/* === GENERAL & FONT STYLES === */
+:root {
+  /* Define colors and fonts here for better maintainability */
+  --white: #ffffff;
+  --redp: #a72f3b;
+  --primary-tint-7: #b95962;
+  --primary-tint-4: #e5c1c4;
+  --neutral-gray-2: #f0f0f0;
+  --neutral-gray-3: #ededed;
+  --neutral-gray-5: #cbcbcb;
+  --neutral-gray-6: #aeaeae;
+  --neutral-gray-9: #434343;
+  --font-main: "IranYekanXvf-Regular", sans-serif;
+  --font-bold: "IranYekanXvf-Bold", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  font-family: var(--font-main);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* === MAIN PAGE LAYOUT (FLEXBOX) === */
+.DSU-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 5rem;
+  padding: 2rem;
+}
+
+.DSU-illustration-column {
+  flex-shrink: 0;
+}
+
+.DSU-form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+}
+
+/* === STEPPER & FORM TITLE === */
+.DSU-stepper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 3rem;
+}
+
+.DSU-form-title {
+  color: var(--primary-tint-7);
+  font-family: var(--font-bold);
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  align-self: flex-end; /* Align title to the right */
+}
+
+/* === FORM LAYOUT (CSS GRID) === */
+.DSU-form-grid {
+  display: grid;
+  direction: rtl;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 24px; /* row-gap and column-gap */
+  padding: 24px;
+  border: 1px solid var(--neutral-gray-3);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.DSU-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.DSU-form-group__label {
+  color: var(--neutral-gray-5);
+  font-size: 14px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+/* === FORM ELEMENTS STYLING === */
+.DSU-form-group__input, .DSU-form-group__select {
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-gray-5);
+  background-color: var(--white);
+  color: var(--neutral-gray-9);
+  font-family: var(--font-main);
+  font-size: 12px;
+  text-align: right;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.DSU-form-group__input:focus, .DSU-form-group__select:focus {
+  outline: none;
+  border-color: var(--redp);
+  box-shadow: 0 0 0 3px var(--primary-tint-4);
+}
+
+.DSU-form-group__input::placeholder {
+  color: var(--neutral-gray-6);
+}
+
+/* Wrappers for icons */
+.DSU-form-group__input-wrapper, .DSU-form-group__select-wrapper {
+  position: relative;
+}
+
+.DSU-form-group__calendar-icon, .DSU-form-group__select-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+.DSU-form-group__input-wrapper .DSU-form-group__input {
+  padding-left: 35px; /* Space for calendar icon */
+}
+
+.DSU-form-group__select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.DSU-form-group__select:invalid {
+  color: var(--neutral-gray-6);
+}
+
+/* === BUTTON === */
+.DSU-button--primary {
+  grid-column: 1 / -1; /* Make button span both columns */
+  justify-self: end; /* Align to the left */
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  background: var(--redp);
+  color: var(--white);
+  font-family: var(--font-bold);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.DSU-button--primary:hover {
+  background: var(--primary-tint-7);
+}
+
+.DSU-button__icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* === RESPONSIVE DESIGN (Media Query) === */
+@media (max-width: 1024px) {
+  .DSU-page-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .DSU-illustration-column {
+    display: none; /* Hide illustration on smaller screens */
+  }
+  .DSU-form-column {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .DSU-form-grid {
+    grid-template-columns: 1fr; /* Stack form fields in a single column */
+  }
+  .DSU-button--primary {
+    justify-self: stretch; /* Make button full-width */
+  }
+  .DSU-form-title {
+      align-self: center;
+  }
+}
+
+/* === (UNCHANGED) Stepper and Illustration inner styles === */
+.DSU-stepper__step { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.DSU-stepper__icon { width: 24px; height: 24px; position: relative; }
+.DSU-stepper__icon img, .DSU-stepper__line { height: auto; overflow: visible; }
+.DSU-stepper__text { color: var(--primary-tint-4); font-size: 12px; }
+.DSU-stepper__step--active .DSU-stepper__text { color: var(--redp); }
+.DSU-illustration { width: 520px; height: 480px; position: relative; }
+.DSU-illustration img { position: absolute; }
+.DSU-illustration__background { left: 0px; top: 52.75px; }
+.DSU-illustration__shadow { width: 77.56%; height: 4.53%; right: 11.22%; left: 11.22%; bottom: 14.49%; }
+.DSU-illustration__character-2 { left: 298.66px; top: 93.66px; }
+.DSU-illustration__screen { left: 197.17px; top: 72.19px; }
+.DSU-illustration__character-1 { left: 113.11px; top: 151.55px; }

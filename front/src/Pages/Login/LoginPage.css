@@ -1,0 +1,181 @@
+.LP-page-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.LP-form-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f9f9f9; */
+    padding: 2rem;
+}
+
+.LP-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.LP-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.LP-subtitle {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 2.5rem;
+}
+
+.LP-form {
+    text-align: right;
+}
+
+.LP-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.LP-form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.LP-form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.LP-form-group input:focus {
+    outline: none;
+    border-color: #B95962;
+    box-shadow: 0 0 0 3px rgba(185, 89, 98, 0.2);
+}
+
+.LP-error-message {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.LP-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+}
+
+.LP-remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.LP-forgot-password, .LP-signup-link a {
+    color: #B95962;
+    text-decoration: none;
+    font-weight: 500;
+}
+.LP-forgot-password:hover, .LP-signup-link a:hover {
+    text-decoration: underline;
+}
+
+.LP-submit-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #B95962;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.LP-submit-button:hover {
+    background-color: #a14e56;
+}
+
+.LP-submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.LP-signup-link {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.LP-illustration-column {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.LP-illustration {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+}
+
+.LP-illustration img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.LP-illustration-background {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    height: auto;
+}
+
+.LP-illustration-shadow {
+    bottom: -150px;
+    width: 120%;
+    top: auto !important;
+}
+
+.LP-illustration-screen {
+    width: 90%;
+}
+
+.LP-illustration-character {
+    width: 60%;
+    bottom: -100px;
+    top: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+@media (max-width: 900px) {
+    .LP-illustration-column {
+        display: none;
+    }
+}

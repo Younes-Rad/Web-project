@@ -1,0 +1,230 @@
+/* === GENERAL & FONT STYLES === */
+:root {
+  --white: #ffffff;
+  --redp: #a72f3b;
+  --primary-tint-7: #b95962;
+  --neutral-gray-3: #ededed;
+  --neutral-gray-4: #d6d6d6;
+  --neutral-gray-5: #cbcbcb;
+  --neutral-gray-9: #434343;
+  --font-main: "IranYekanXvf-Regular", sans-serif;
+  --font-bold: "IranYekanXvf-Bold", sans-serif;
+  --font-medium: "IranYekanXvf-Medium", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  font-family: var(--font-main);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* === MAIN PAGE LAYOUT (FLEXBOX) === */
+.USU-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.USU-illustration-column {
+  flex-shrink: 0;
+  width: 45%;
+  max-width: 520px;
+}
+
+.USU-illustration-img {
+  width: 100%;
+  height: auto;
+}
+
+.USU-form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+}
+
+/* === STEPPER & FORM TITLE === */
+.USU-stepper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+
+.USU-stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.USU-stepper-icon { width: 24px; height: 24px; }
+.USU-stepper-text { font-size: 12px; color: var(--redp); }
+.USU-stepper-text--inactive { color: var(--primary-tint-7); }
+
+.USU-form-title {
+  color: var(--primary-tint-7);
+  font-family: var(--font-bold);
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  align-self: flex-end;
+}
+
+/* === FORM LAYOUT (CSS GRID) === */
+.USU-form-grid {
+  display: grid;
+  direction: rtl;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 20px;
+  padding: 24px;
+  border: 1px solid var(--neutral-gray-4);
+  border-radius: 24px;
+  width: 100%;
+}
+
+.USU-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.USU-form-group--full-width {
+  grid-column: 1 / -1; /* Span across both columns */
+}
+
+.USU-form-label {
+  color: var(--neutral-gray-5);
+  font-size: 14px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+/* === FORM ELEMENTS STYLING === */
+.USU-form-input, .USU-form-select, .USU-form-textarea {
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-gray-5);
+  background-color: var(--white);
+  color: var(--neutral-gray-9);
+  font-family: var(--font-main);
+  font-size: 12px;
+  text-align: right;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.USU-form-input:focus, .USU-form-select:focus, .USU-form-textarea:focus {
+  outline: none;
+  border-color: var(--redp);
+  box-shadow: 0 0 0 3px rgba(167, 47, 59, 0.2);
+}
+
+.USU-form-input::placeholder, .USU-form-textarea::placeholder {
+  color: #b0b0b0;
+  text-align: right;
+}
+
+.USU-form-textarea {
+  height: auto;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.USU-select-wrapper {
+  position: relative;
+}
+
+.USU-form-select {
+  padding-left: 35px; /* Make space for arrow */
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.USU-select-arrow {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* === MAP & BUTTON === */
+.USU-map-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 300px;
+}
+.USU-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.USU-map-marker {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.USU-button-submit {
+  grid-column: 1 / -1;
+  justify-self: end;
+  width: 184px;
+  height: 48px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--redp);
+  color: var(--white);
+  font-family: var(--font-medium);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.USU-button-submit:hover {
+  background-color: var(--primary-tint-7);
+}
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+  .USU-illustration-column {
+    display: none; /* Hide illustration on tablets and smaller */
+  }
+  .USU-form-column {
+    max-width: 700px; /* Allow form to take more space */
+  }
+}
+
+@media (max-width: 600px) {
+  .USU-page-container {
+    padding: 1rem;
+  }
+  .USU-form-grid {
+    grid-template-columns: 1fr; /* Stack all fields in one column on mobile */
+    gap: 20px;
+  }
+  .USU-form-title {
+    align-self: center;
+  }
+  .USU-button-submit {
+    width: 100%; /* Make button full-width */
+    justify-self: stretch;
+  }
+}

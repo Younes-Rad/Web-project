@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'IRANSansWeb'; 
+    src: url('/Fonts/IRANSansWeb.woff2') format('woff2'); 
+  }
+  
+  @font-face {
+      font-family: 'IRANYekan';
+      src: url('/Fonts/IRANYekan.ttf') format('truetype');
+  
+    }
+
+
+:root {
+    --font-family: "IRANSansWeb", "IRANYekan";
+    --font-size-875: 0.875rem;
+    --font-size-1: 1rem;
+    --font-size-2: 1.5rem;
+    --font-style: normal;
+    --font-weight-1: 500;
+    --font-weight-2: 400;
+    --font-weight-3: 700;
+    --line-height: 1.5rem;
+    --icon-color: #434343;
+    --line-haight: 1.5rem;
+    --line-haight-2: 1.8rem;
+    --text-color-p: #FFF;
+    --red-p: #A72F3B;
+    --red-title: #86262F;
+}
+    
+    
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "IRANSansWeb", "IRANYekan";
+}
+
+.submitReview-container{
+    direction: rtl;
+    margin: 2rem auto;
+    border: 1px solid black;
+    width: 40rem;
+    height: auto;
+
+    border-radius: 1rem;
+    background: #FFF;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5rem 8rem;
+}
+
+#submitReview-title{
+    color: var(--Neutral-Gray-9, #434343);
+    text-align: right;
+    font-family: var(--font-family);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%
+}
+
+#submitReview-pName{
+    color: #898989;
+    text-align: right;
+
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; 
+}
+
+.submitReview-rewiewTitle{
+
+}
+
+.submitReview-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-content: center;
+}
+
+.submitReview-grayTitles{
+    color: #CBCBCB;
+    text-align: right;
+
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; 
+}
+
+.submitReview-inputText{
+    border-radius: 0.5rem;
+    border: 1px solid var(--Neutral-Gray-5, #CBCBCB);
+
+    height: 2.5rem;
+    padding: 0.375rem 0.5rem;
+
+    width: 100%;
+}
+
+.submitReview-addtolist{
+    position: relative;
+    top: -2rem;
+    left: -22rem;
+}
+
+.submitReview-mainText-title{
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+}
+
+#submitReview-mainText-star{
+    color: #C30000;
+}
+
+#submitReview-mainText-textaria{
+    height: 5rem;
+    padding: 0.375rem 0.5rem;
+}
+
+.submitReview-submitButton{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.submitReview-submitButton-button{
+    display: flex;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: var(--red-p, #A72F3B);
+    color: #FFF;
+
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.submitReview-addtolist-button{
+    position: relative;
+    top: -30px;
+    left: -90%;
+}
+
+.submitReview-submitButton-text{
+    color: #434343;
+    text-align: center;
+
+    font-family: var(--font-family);
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+
+#submitReview-closePage{
+    position: relative;
+    width: 30px;
+    top: 100%;
+    left: -118%;
+}
+
+#reviewTitle{
+    margin-bottom: 30px;
+}
